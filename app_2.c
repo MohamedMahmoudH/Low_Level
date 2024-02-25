@@ -30,7 +30,7 @@ int main()
     rx = 2*qx - px;
     ry = 2*qy - py;
 
-    printf("\nthe point R coordinates are ( %d , %d )\n",rx,ry);
+    printf("\npoint R coordinates are ( %d , %d )\n",rx,ry);
 
     return 0;
 }
