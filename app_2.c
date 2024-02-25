@@ -1,4 +1,21 @@
 
+
+/*
+the problem :
+Consider two points P(px,py) , Q(qx,qy) and . We consider the inversion or point
+reflection, R(rx,ry) , of point P across point Q to be a 180 degree rotation of point P
+around point Q .
+Given P (px,py )and Q(qx,qy) Find R(rx,ry)
+Input : px,py,qx,qy
+Output : rx,ry
+Example :
+If the user inputs px = 0 , py =0 .
+qx =1 , qy =1 then the program shall get rx =2 , ry =2.
+
+*/
+
+
+
 #include <stdio.h>
 /*20 min*/
 int main()
