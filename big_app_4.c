@@ -129,3 +129,36 @@ int main()
     return 0;
 
 }
+
+
+/*
+    ********************** chatgpt comments on my code ************************
+
+    
+The code you provided aims to determine whether a given point lies inside or outside a circle. It utilizes a mathematical approach to determine
+this without explicitly calculating the distance between the point and the center of the circle.
+
+Here's a review of your code:
+
+The input is taken for the radius of the circle, the coordinates of the circle center, and the coordinates of the point.
+The code then shifts the coordinates to make the center of the circle the origin (0, 0) to simplify the calculations.
+It calculates the maximum and minimum possible values for the pseudo-coordinates of the point based on the circle's equation.
+It then checks if the pseudo-coordinates of the point fall within the range determined by the circle's equation.
+Here are some suggestions and potential issues with the code:
+
+Variable naming: The variable names are descriptive, which is good for readability.
+
+Error handling: The code handles situations where the point lies outside the circle's equation (where the value inside sqrt() becomes negative),
+which is essential for avoiding invalid calculations.
+
+Efficiency: The approach is quite efficient in terms of computation. However, it may be a bit complex compared to directly calculating
+the distance between the point and the center and comparing it with the radius.
+
+Accuracy: The code seems accurate in determining whether the point lies inside or outside the circle. However,
+    there might be a problem with how it handles points lying exactly on the circle's boundary, depending on how floating-point errors are treated.
+
+Readability: The code is a bit lengthy due to the detailed comments explaining the approach, but this can be beneficial for understanding the logic.
+
+Overall, the code appears to effectively determine whether a given point lies inside or outside a circle based on the provided
+radius and center coordinates. It's a unique approach that avoids explicitly calculating the distance between the point and the circle's center.
+*/
