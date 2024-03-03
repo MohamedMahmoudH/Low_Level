@@ -16,24 +16,24 @@ Display: Point lies outside the circle, Point lies within the circle.
 
 int main()
 {
-    float radius  = 0 ;
-    float xc      = 0 ;//x coordinate of center of circle
-    float yc      = 0 ;//y coordinate of center of circle
-    float real_xp = 0 ;//x coordinate of the point
-    float real_yp = 0 ;//y coordinate of the point
+    long double radius  = 0 ;
+    long double xc      = 0 ;//x coordinate of center of circle
+    long double yc      = 0 ;//y coordinate of center of circle
+    long double real_xp = 0 ;//x coordinate of the point
+    long double real_yp = 0 ;//y coordinate of the point
 
 
 
     printf("enter cicle radius : ");
-    scanf ("%f",&radius);
+    scanf ("%Lf",&radius);
     printf("enter the x coordinate of center of circle : ");
-    scanf ("%f",&xc);
+    scanf ("%Lf",&xc);
     printf("enter the y coordinate of center of circle : ");
-    scanf ("%f",&yc);
+    scanf ("%Lf",&yc);
     printf("enter the x coordinate of the point : ");
-    scanf ("%f",&real_xp);
+    scanf ("%Lf",&real_xp);
     printf("enter the y coordinate of the point : ");
-    scanf ("%f",&real_yp);
+    scanf ("%Lf",&real_yp);
 
     /*
     -----------------------------------------------------------------------------------------------------
@@ -60,13 +60,13 @@ int main()
     -----------------------------------------------------------------------------------------------------
     */
 
-    float pseudo_xp      = real_xp - xc ;
-    float pseudo_yp      = real_yp - yc ;
+    long double pseudo_xp      = real_xp - xc ;
+    long double pseudo_yp      = real_yp - yc ;
 
-    float pseudo_x_max   = 0 ;
-    float pseudo_x_min   = 0 ;
-    float pseudo_y_max   = 0 ;
-    float pseudo_y_min   = 0 ;
+    long double pseudo_x_max   = 0 ;
+    long double pseudo_x_min   = 0 ;
+    long double pseudo_y_max   = 0 ;
+    long double pseudo_y_min   = 0 ;
 
     /*
     first : to get y_max and y_min i will subs pseudo_x = pseudo_xp
@@ -134,7 +134,7 @@ int main()
 /*
     ********************** chatgpt comments on my code ************************
 
-    
+
 The code you provided aims to determine whether a given point lies inside or outside a circle. It utilizes a mathematical approach to determine
 this without explicitly calculating the distance between the point and the center of the circle.
 
