@@ -4,6 +4,8 @@ write a code that print a pyramid of "*" and take from user number of rows
 
 #include <stdio.h>
 
+#define SPACE ' '
+
 /*35 min*/
 
 int main()
@@ -30,14 +32,16 @@ int main()
             {
                 if(current_column == (rows_num - current_row + 1))
                 {
-                    for(counter = 1 ; counter <= current_row ; counter++)
+                    for(counter = 1 ; counter < current_row ; counter++)
                     {
-                        printf("* ");
+                        printf("*%c",SPACE);
                     }
+                    printf("*"); //to avoid printing space after final '*'
+
                 }
-                else
+                else if(current_column <= (rows_num - current_row + 1))//to delete all spaces after the pyramid
                 {
-                    printf(" ");
+                    printf("%c",SPACE);
                 }
             }
             printf("\n");
