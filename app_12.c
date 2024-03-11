@@ -1,3 +1,23 @@
+/*
+Print a pattern of numbers from 1 to num as shown below
+if input = 7;
+
+output :
+7  7  7  7  7  7  7
+ 6  6  6  6  6  6
+7  5  5  5  5  5  7
+ 6  4  4  4  4  6
+7  5  3  3  3  5  7
+ 6  4  2  2  4  6
+7  5  3  1  3  5  7
+ 6  4  2  2  4  6
+7  5  3  3  3  5  7
+ 6  4  4  4  4  6
+7  5  5  5  5  5  7
+ 6  6  6  6  6  6
+7  7  7  7  7  7  7
+*/
+
 #include <stdio.h>
 #include <math.h>
 
@@ -34,20 +54,6 @@ int main()
                     for(ii = 1 ; ii <= (digitNum - digitCarrier + 1) ; ii++)// to avoid error that producing by tens and hundreds
                     {
                         printf("%c",SPACE);
-                        /*
-                        if(digitCarrier == 2)
-                        {
-                            //printf("%c%c%c",SPACE,SPACE,SPACE);
-                            //printf("%c%c",SPACE,SPACE);
-                            //printf("%c",SPACE);
-                        }
-                        else if(digitCarrier == 1)
-                        {
-                            //printf("%c%c%c",SPACE,SPACE,SPACE);
-                            //printf("%c%c",SPACE,SPACE);
-                            //printf("%c",SPACE);
-                        }
-                        */
                     }
                 }
                 else
