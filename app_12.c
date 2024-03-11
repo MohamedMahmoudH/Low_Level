@@ -1,5 +1,5 @@
 /*
-Print a pattern of numbers from 1 to num as shown below
+Print a pattern of numbers from 1 to maxNum as shown below
 if input = 7;
 
 output :
