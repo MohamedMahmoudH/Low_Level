@@ -14,7 +14,13 @@ int main(void)
     int reversed_index = 0;
 
     printf("enter number of array elements : ");
-    scanf ("%d",&elements_num);
+
+    // i get this idea from search
+    if(scanf("%d",&elements_num) != 1 || elements_num <= 0)// input validation
+    {
+        printf("ERROR\nyou can only input a positive integer");
+        return 1;
+    }
 
     int arr[elements_num];
     int reversed_arr[elements_num];
