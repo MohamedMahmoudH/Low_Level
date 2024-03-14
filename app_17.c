@@ -10,7 +10,7 @@ reverse an array
 int main(void)
 {
     int elements_num   = 0;
-    int index         = 0;
+    int index          = 0;
     int reversed_index = 0;
 
     printf("enter number of array elements : ");
