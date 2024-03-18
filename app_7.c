@@ -12,15 +12,16 @@ int main()
     int columns         = 0 ;
     int rows_counter    = 1 ;
     int counter         = 0 ;
+    char symbol         = 0 ;
 
     printf("enter number of rows then column : ");
     scanf ("%d%d",&rows,&columns);
-
-
+    printf("enter the symbol : ");
+    scanf (" %c",&symbol);
 
     if(rows <= 0 || columns <= 0) // input validation
     {
-        printf("ERROR\nyou can't input a -ve number");
+        printf("ERROR\nyou can input only positive numbers");
     }
     else
     {
@@ -31,13 +32,13 @@ int main()
                 printf(" ");
             }
 
-            printf("* ");
+            printf("%c ",symbol);
 
             for(counter = 0 ; counter < (columns - 2); counter++)
             {
                 if(rows_counter == 1 || rows_counter == rows)
                 {
-                    printf("* ");
+                    printf("%c ",symbol);
                 }
                 else
                 {
@@ -45,8 +46,9 @@ int main()
                 }
             }
 
-            printf("*\n");
+            printf("%c\n",symbol);
             rows_counter++ ;
         }
     }
+    return 0;
 }
