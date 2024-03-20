@@ -27,13 +27,13 @@ int main()
     }
     else
     {
-        for(current_row = 1 ; current_row <= rows_num ; current_row++)
+        for(current_row = 1 ; current_row <= rows_num ; ++current_row)
         {
-            for(current_column = 1 ; current_column <= (rows_num) ; current_column++)
+            for(current_column = 1 ; current_column <= (rows_num) ; ++current_column)
             {
                 if(current_column == (rows_num - current_row + 1))
                 {
-                    for(counter = 1 ; counter <= current_row ; counter++)
+                    for(counter = 1 ; counter <= current_row ; ++counter)
                     {
                         printf("%c ",symbol);
                     }
