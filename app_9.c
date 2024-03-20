@@ -1,5 +1,5 @@
 /*
-write a code that print a pyramid of "*" and take from user number of rows
+write a code that print a pyramid and take from user number of rows
 */
 
 #include <stdio.h>
@@ -8,14 +8,17 @@ write a code that print a pyramid of "*" and take from user number of rows
 
 int main()
 {
-    int rows_num       = 0;
-    int current_row    = 0;
-    int current_column = 0;
-    int counter        = 0;
+    int  rows_num       = 0;
+    int  current_row    = 0;
+    int  current_column = 0;
+    int  counter        = 0;
+    char symbol         = 0;
 
 
     printf("enter rows number : ");
     scanf ("%d",&rows_num);
+    printf("enter the symbol : ");
+    scanf (" %c",&symbol);//the space to clear the buffer
 
 
     if(rows_num <= 0)// input validation
@@ -32,7 +35,7 @@ int main()
                 {
                     for(counter = 1 ; counter <= current_row ; counter++)
                     {
-                        printf("* ");
+                        printf("%c ",symbol);
                     }
                 }
                 else
