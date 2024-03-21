@@ -23,7 +23,9 @@ int main()
     printf("enter rows number then pyramids number : ");
     scanf ("%d %d",&rows_num,&pyramids_num);
     printf("enter the symbol : ");
-    if(scanf(" %c",&symbol) != 1 || getchar() != '\n')//to check if the user input one symbol or not
+    scanf (" %c",&symbol);//the space before %c to clear the buffer
+
+    if(getchar() != '\n')//to get from user only one symbol
     {
         printf("Invalid input , Please enter only one symbol\n");
         return 1;
