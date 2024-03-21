@@ -23,7 +23,11 @@ int main()
     printf("enter rows number then pyramids number : ");
     scanf ("%d %d",&rows_num,&pyramids_num);
     printf("enter the symbol : ");
-    scanf (" %c",&symbol);
+    if(scanf(" %c",&symbol) != 1 || getchar() != '\n')//to check if the user input one symbol or not
+    {
+        printf("Invalid input , Please enter only one symbol\n");
+        return 1;
+    }
 
     if(rows_num <= 0 && pyramids_num <= 0)// input validation
     {
