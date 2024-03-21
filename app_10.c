@@ -8,22 +8,22 @@ write a code that print number of pyramids and take from user number of rows and
 
 /*50 min*/
 
+void print_pyramid(void);
+
+int  rows_num       ;
+int  pyramids_num   ;
+int  current_row    ;
+int  current_column ;
+int  counter        ;
+int  counter_2      ; // to avoid infinite loop "logical error"
+char symbol         ;
+
 int main()
 {
-    int  rows_num       = 0;
-    int  pyramids_num   = 0;
-    int  current_row    = 0;
-    int  current_column = 0;
-    int  counter        = 0;
-    int  counter_2      = 0; // to avoid infinite loop "logical error"
-    char symbol         = 0;
-
-
     printf("enter rows number then pyramids number : ");
     scanf ("%d %d",&rows_num,&pyramids_num);
     printf("enter the symbol : ");
     scanf (" %c",&symbol);
-
 
     if(rows_num <= 0 && pyramids_num <= 0)// input validation
     {
@@ -37,12 +37,7 @@ int main()
             {
                 if(current_column == (rows_num - current_row + 1))
                 {
-                    for(counter = 1 ; counter < current_row ; ++counter)
-                    {
-                        printf("%c%c",symbol,SPACE);
-                    }
-                    printf("%c",symbol);
-
+                    print_pyramid();
                 }
                 else if(current_column <= (rows_num - current_row + 1))//to avoid printing unwanted spaces after the pyramid
                 {
@@ -56,16 +51,18 @@ int main()
                 {
                     printf("%c",SPACE);
                 }
-
-                for(counter = 1 ; counter < current_row ; ++counter)
-                {
-                    printf("%c%c",symbol,SPACE);
-                }
-                printf("%c",symbol);
+                print_pyramid();
             }
-
             printf("\n");
         }
     }
     return 0;
+}
+void print_pyramid(void)
+{
+    for(counter = 1 ; counter < current_row ; ++counter)
+    {
+        printf("%c%c",symbol,SPACE);
+    }
+    printf("%c",symbol);
 }
