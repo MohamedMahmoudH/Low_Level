@@ -59,6 +59,13 @@ int main()
     printf("enter maximum number of square : ");
     scanf ("%d",&maxNum);
 
+    //input validation
+    if((maxNum < 1) || (maxNum >= 1000))
+    {
+        printf("invalid input\nyou can only print positive integer number less than 1000");
+        return 1;
+    }
+
     carrier  = maxNum ;
     digitNum = floor(log10(maxNum))+1;
 
