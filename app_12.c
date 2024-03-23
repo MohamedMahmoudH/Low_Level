@@ -37,21 +37,19 @@ output :
 #include <stdio.h>
 #include <math.h>
 
-#define SPACE ' '
-
 /*200 min*/
 /*70  min*/ //to update the code
 
-void solve_space_issue(void);
-void side_two_triangles(void);
+void printCenterNumbersPattern(void);
+void printSideNumbersPattern(void);
 
-int maxNum        ;
-int currentRow    ;
-int currentColumn ;
-int carrier       ;
-int digitNum      ;
-int ii            ;
-int jj            ;
+// Global variables
+int maxNum        ; // Maximum number
+int currentRow    ; // Current row index
+int currentColumn ; // Current column index
+int carrier       ; // Carrier variable
+int digitNum      ; // Number of digits in maxNum
+int counter       ; // Counter variable
 
 int main()
 
@@ -62,43 +60,45 @@ int main()
     //input validation
     if((maxNum < 1) || (maxNum >= 1000))
     {
-        printf("invalid input\nyou can only print positive integer number less than 1000");
+        printf("invalid input\nPlease enter a positive integer less than 1000");
         return 1;
     }
 
-    carrier  = maxNum ;
-    digitNum = floor(log10(maxNum))+1;
+    carrier  = maxNum ; // Initialize carrier
+    digitNum = floor(log10(maxNum))+1; // Calculate number of digits in maxNum
 
-
-    for(currentRow = 1 ; currentRow <= ((maxNum*2)-1) ; ++currentRow)
+    for(currentRow = 1 ; currentRow <= ((maxNum*2)-1) ; ++currentRow)// Loop through each row
     {
-        for(currentColumn = 1 ; currentColumn <= ((maxNum*2)-1) ; ++currentColumn)
+        for(currentColumn = 1 ; currentColumn <= ((maxNum*2)-1) ; ++currentColumn)// Loop through each column
         {
-            if(currentRow <= maxNum)
+            if(currentRow <= maxNum)// for the upper part
             {
                 if((currentColumn >= currentRow) && (currentColumn <= (carrier + maxNum -1)))
+                // Check if current cell is in the center area of the pattern
                 {
-                    solve_space_issue();
+                    printCenterNumbersPattern();
                 }
                 else
                 {
-                    side_two_triangles();
+                    printSideNumbersPattern();
                 }
             }
-            else if((currentRow <= ((maxNum*2)-1)) && (currentRow > maxNum))
+            else if((currentRow <= ((maxNum*2)-1)) && (currentRow > maxNum))// for the lower part
             {
                 if((currentColumn <= currentRow) && (currentColumn >= (currentRow-2*(carrier -1))))
                 {
-                    solve_space_issue();
+                    printCenterNumbersPattern();
                 }
                 else
                 {
-                    side_two_triangles();
+                    printSideNumbersPattern();
                 }
             }
         }
 
-        printf("\n");
+        printf("\n");// Move to next line after each row
+        
+        // Update carrier based on current row
         if(currentRow < maxNum)
         {
             carrier-- ;
@@ -110,37 +110,39 @@ int main()
     }
 }
 
-void solve_space_issue(void)
+void printCenterNumbersPattern(void)
 {
+    // Print numbers in the center area of the pattern
     switch(digitNum)
     {
         case 3:
             printf("%3d   ",carrier);
             break;
         case 2:
-            printf("%2d  ",carrier);
+            printf("%2d  " ,carrier);
             break;
         case 1:
-            printf("%d ",carrier);
+            printf("%d "   ,carrier);
     }
 }
 
-void side_two_triangles(void)
+// Function to print numbers in the side area of the pattern
+void printSideNumbersPattern(void)
 {
-    for(jj = 1 ; jj < maxNum ; jj++)
+    for(counter = 1 ; counter < maxNum ; counter++)
     {
-        if((currentColumn == jj) || (currentColumn == ((2* maxNum)- jj)))
+        if((currentColumn == counter) || (currentColumn == ((2* maxNum)- counter)))
         {
             switch(digitNum)
             {
                 case 3:
-                    printf("%3d   ",(maxNum - jj + 1));
+                    printf("%3d   ",(maxNum - counter + 1));
                     break;
                 case 2:
-                    printf("%2d  ",(maxNum - jj + 1));
+                    printf("%2d  " ,(maxNum - counter + 1));
                     break;
                 case 1:
-                    printf("%d ",(maxNum - jj + 1));
+                    printf("%d "   ,(maxNum - counter + 1));
             }
         }
     }
