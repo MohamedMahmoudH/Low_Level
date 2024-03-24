@@ -23,7 +23,22 @@ int main(void)
     {
         for(index = 1 ; index <= currentRow ; ++index)
         {
-            printf("%-3d ",counter);
+            if(rowsNum <= 13)
+            {
+                printf("%-2d ",counter);
+            }
+            else if(rowsNum <= 44)
+            {
+                printf("%-3d ",counter);
+            }
+            else if(rowsNum <= 140)
+            {
+                printf("%-4d ",counter);
+            }
+            else
+            {
+                printf("%-6d ",counter);
+            }
             ++counter;
         }
         printf("\n");
