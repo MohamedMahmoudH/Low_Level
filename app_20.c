@@ -2,16 +2,22 @@
 #include <math.h>
 
 /*15 min*/
-
-int rowsNum     ;
-int currentRow  ;
-int counter = 1 ;
-int index       ;
+/*20 min*/ //Editing
 
 int main(void)
 {
+    int rowsNum     = 0 ;
+    int currentRow  = 0 ;
+    int counter     = 1 ;
+    int index       = 0 ;
+    int numOfDigits = 0 ;
+
     printf("enter the number of rows of floyd's triangle : ");
     scanf ("%d",&rowsNum);
+
+    // this formula will get number of digits for the last number in last row of floyd's triangle
+    numOfDigits = floor(log10((rowsNum * (rowsNum + 1) / 2))) + 1;
+
 
     if(rowsNum < 1)// input validation
     {
@@ -23,22 +29,7 @@ int main(void)
     {
         for(index = 1 ; index <= currentRow ; ++index)
         {
-            if(rowsNum <= 13)
-            {
-                printf("%-2d ",counter);
-            }
-            else if(rowsNum <= 44)
-            {
-                printf("%-3d ",counter);
-            }
-            else if(rowsNum <= 140)
-            {
-                printf("%-4d ",counter);
-            }
-            else
-            {
-                printf("%-6d ",counter);
-            }
+            printf("%-*d ",numOfDigits,counter);
             ++counter;
         }
         printf("\n");
