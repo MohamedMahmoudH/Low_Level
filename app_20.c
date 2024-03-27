@@ -1,3 +1,6 @@
+/*
+flouyd's triangle
+*/
 #include <stdio.h>
 #include <math.h>
 
