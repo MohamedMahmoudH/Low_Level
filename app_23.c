@@ -10,7 +10,6 @@ char sentence[SIZE];
 int main(void)
 {
     int index   = 0;
-    int checker = 1;
 
     printf("input any number of words : ");
     
@@ -21,20 +20,14 @@ int main(void)
         if(sentence[index] == ' ')
         {
             printf("\n");
-            checker = 1;
         }
         else if( sentence[index] == NULL)
         {
-            ++checker;
-            if(checker >= 3)
-            {
-                 break;
-            }
+            break;
         }
         else
         {
             printf("%c",sentence[index]);
-            checker = 1;
         }
     }
     return 0;
