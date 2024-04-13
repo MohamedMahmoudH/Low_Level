@@ -1,34 +1,31 @@
-/* Printing Tokens from hackerrank
-   link :  https://www.hackerrank.com/challenges/printing-tokens-/problem?isFullScreen=true */
-
 #include <stdio.h>
-
-#define SIZE 1000
-
-char sentence[SIZE];
 
 int main(void)
 {
-    int index   = 0;
+    unsigned long long num     = 0;
+    unsigned long long counter = 0;
 
-    printf("input any number of words : ");
-    
-    scanf("%[^\n]%*c",sentence);
+    float result    = 0;
+    int   divisiors = 2;//all numbers can division on 1 and itself
 
-    for(index = 0 ; index < 1000 ; ++index)
+    printf("enter the number : ");
+    scanf ("%llu",&num);
+
+    if(1 == num)
     {
-        if(sentence[index] == ' ')
+        --divisiors;
+    }
+
+    for(counter = 2 ; counter <= (num / 2) ; ++counter)//no number > half of "num" can be divisior for "num" unless num itself
+    {
+        result =((float)num / counter);
+        if((float)result == (int)result)
         {
-            printf("\n");
-        }
-        else if( sentence[index] == NULL)
-        {
-            break;
-        }
-        else
-        {
-            printf("%c",sentence[index]);
+            ++divisiors;
         }
     }
+
+    printf("number of divisiors for %d is : %d",num,divisiors);
+
     return 0;
 }
