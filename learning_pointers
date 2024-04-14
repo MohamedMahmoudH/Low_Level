@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+int main(void)
+{
+    /**
+    unsigned int num          = 99   ;
+    unsigned int *ptr         = &num ;
+    unsigned int **double_ptr = &ptr ;
+    unsigned int *ptrptr      = &ptr ;
+
+
+    printf("%u\n",ptr        ); /* address of num *
+    printf("%u\n",*ptr       ); /* 99 *
+
+    printf("%u\n",ptrptr     ); /* address of ptr *
+    printf("%u\n",*ptrptr    ); /* ptr == address of num*
+
+    printf("\n%u\n",double_ptr); /* address of ptr *
+    printf("%u\n",*double_ptr ); /* address of num == ptr *
+    printf("%u\n",**double_ptr); /* 99 *
+    */
+
+
+
+
+    int arrNum1[3] = {11 , 22 , 33};
+    int arrNum2[3] = {44 , 55 , 66};
+    
+    int *const arrPtr[2] = {arrNum1 , arrNum2};
+    
+    printf("%d\n",arrNum1);
+    printf("%d\n",arrPtr);
+    printf("%d\n",arrPtr[0]);
+    printf("%d\n",&arrPtr[0]);
+    printf("%d\n",*arrPtr[0]);
+    
+    printf("++++++++++++++++++++++++\n");
+    
+    printf("%d\n",(arrNum1 + 2));/* address of 33 */
+    printf("%d\n",(arrPtr[0] + 2));/* address of 33 */
+    
+    printf("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+    
+    char *names[2]={"mohamed mahmoud","hassan hamed"};
+    /* char  names[2][] = {"mohamed mahmoud","hassan hamed"}
+       char *names[2]   = {names --address of 1st element of 1st string-- ,
+                          (names + 1) --address of 1st element of 2nd string-- } */
+    
+    printf("%d\n",names);
+    printf("%c\n",*(names[0]));
+    printf("%c\n",*(*(names + 1)+ 2));
+    printf("%c\n",*(names[1] + 2));
+    printf("%d\n",(*(names + 1)+ 2));
+    printf("%d\n",(*(names + 1)+ 1));
+    printf("%c\n",&names[1][5]);
+    
+    printf("++++++++++++++++++++++++\n");
+    
+    printf("%s\n",*names);
+    printf("%s\n",*(names + 1));
+    
+    printf("++++++++++++++++++++++++\n");
+    
+    printf("%d\n",names);
+    printf("%d\n",&names[0]);
+    
+    printf("%c\n",*(names[0]));
+    printf("%d\n",names[0]);
+    
+    printf("%d\n",names[0] + 13);/* address of u */
+    printf("%c\n",*(names[0] + 13));/* u */
+    
+    printf("++++++++++++++++++++++++\n");
+    printf("++++++++++++++++++++++++\n");
+    printf("++++++++++++++++++++++++\n");
+}
