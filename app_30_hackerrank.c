@@ -21,6 +21,7 @@ int main()
     int total_number_of_shelves;
     scanf("%d", &total_number_of_shelves);
 
+    
     /************************************************************/
     total_number_of_books = (int *)calloc(total_number_of_shelves , sizeof(int));
     total_number_of_pages = (int **)calloc(total_number_of_shelves , sizeof(int *));
@@ -75,3 +76,4 @@ int main()
 
     return 0;
 }
+
